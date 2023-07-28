@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KauflandOF</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo {
+      width: 100px; /* Adjust the width as per your preference */
+      height: 100px; /* Adjust the height as per your preference */
+      margin-right: 10px;
+    }
+
+    nav {
+      background-color: #444;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .product {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .cart {
+      background-color: #f2f2f2;
+      padding: 10px;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 0;
+    }
+
+    .product img {
+      max-width: 80%; /* Adjust the max-width as per your preference */
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .cart-item img {
+      max-width: 50px;
+      margin-right: 10px;
+    }
+
+    .cart-total {
+      font-weight: bold;
+    }
+    .buy-now-btn {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .buy-now-btn:focus {
+      outline: none;
+    }
+  </style>
+  <script>
+    // JavaScript to handle shopping cart functionality
+    const cartItems = [];
+
+    function addToCart(productName, price) {
+      cartItems.push({ name: productName, price: price });
+      updateCartDisplay();
+    }
+
+    function updateCartDisplay() {
+      const cartElement = document.querySelector('.cart');
+      const cartItemsHTML = cartItems
+        .map(item => `<div class="cart-item">
+                      <img src="product1.jpg" alt="${item.name}">
+                      <span>${item.name}</span>
+                      <span>$${item.price.toFixed(2)}</span>
+                    </div>`)
+        .join('');
+
+      const cartTotal = cartItems.reduce((total, item) => total + item.price, 0);
+      cartElement.innerHTML = `
+        <h2>Shopping Cart</h2>
+        ${cartItemsHTML}
+        <p class="cart-total">Total: $${cartTotal.toFixed(2)}</p>
+      `;
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <img class="logo" src="../OF-Kouf/LoGokk.jpg" alt="OF-Kouf">
+    <h1>Kaufland Only Fans</h1>
+  </header>
+
+  <nav>
+    <!-- Add navigation links here -->
+  </nav>
+
+  <div class="product-list">
+    <!-- Example product cards -->
+    <div class="product">
+      <!-- Milf Mleko content -->
+      <img src="../OF-Kouf/Mleko.jpg" alt="Milf Mleko">
+      <h3>Milf Mleko</h3>
+      <p>Price: $19.99</p>
+      <button onclick="addToCart('Milf Mleko', 19.99)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <!-- Kaufland Only Fans Předplatné (1 měsíc) content -->
+      <img src="../OF-Kouf/Maso.jpg" alt="Kaufland Only Fans Předplatné (1 měsíc)">
+      <h3>Kaufland Only Fans Předplatné (1 měsíc)</h3>
+      <p>Price: $11.99</p>
+      <button onclick="addToCart('Kaufland Only Fans Předplatné (1 měsíc)', 11.99)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <!-- Kaufland Only Fans Předplatné (3 měsíce) -->
+      <img src="../OF-Kouf/Máslo.jpg" alt="Kaufland Only Fans Předplatné (3 měsíce)">
+      <h3>Kaufland Only Fans Předplatné (3 měsíce)</h3>
+      <p>Price: $35.99</p>
+      <button onclick="addToCart('Kaufland Only Fans Předplatné (3 měsíce)', 35.99)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <!-- Sex Video Hovor (5min) content -->
+      <img src="../OF-Kouf/Hovor.jpg" alt="Sex Video Hovor">
+      <h3>Sex Video Hovor (5min)</h3>
+      <p>Price: $9.99</p>
+      <button onclick="addToCart('Sex Video Hovor (5min)', 9.99)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <!-- Prodavačka (1Noc) content -->
+      <img src="../OF-Kouf/Prodavacka.jpg" alt="Prodavačka (1Noc)">
+      <h3>Prodavačka (1Noc)</h3>
+      <p>Price: $49.99</p>
+      <button onclick="addToCart('Prodavačka (1Noc)', 49.99)">Add to Cart</button>
+    </div>
+    <!-- Add more product cards here -->
+  </div>
+
+  </header>
+
+  <div class="product-list">
+    <!-- ... (Previous product cards content) ... -->
+  </div>
+
+  <div class="cart">
+    <!-- Shopping Cart Content -->
+    <h2>Shopping Cart</h2>
+    <!-- Cart Items Will Be Added Here By JavaScript -->
+    <div class="cart-items"></div>
+    <p class="cart-total">Total: $0.00</p>
+    <!-- "Buy Now" button placed here -->
+    <button class="buy-now-btn" onclick="buyNow()">Buy Now</button>
+  </div>
+
+  <footer>
+    <p> &copy; Kaufland Only Fans. All rights reserved Bavid sve snist sry</p>
+  </footer>
+
+  <script>
+
+    function updateCartDisplay() {
+      const cartItemsHTML = cartItems
+        .map(item => `<div class="cart-item">
+                      <img src="product1.jpg" alt="${item.name}">
+                      <span>${item.name}</span>
+                      <span>$${item.price.toFixed(2)}</span>
+                    </div>`)
+        .join('');
+
+      const cartElement = document.querySelector('.cart-items');
+      cartElement.innerHTML = cartItemsHTML;
+
+      const cartTotal = cartItems.reduce((total, item) => total + item.price, 0);
+      const cartTotalElement = document.querySelector('.cart-total');
+      cartTotalElement.textContent = `Total: $${cartTotal.toFixed(2)}`;
+    }
+  function buyNow() {
+    // Replace this with your actual purchase process or payment gateway integration
+    // For now, just display an alert message indicating the purchase is complete
+    alert('Purchase complete! Thank you for money idiot Haha!');
+
+    // Clear the shopping cart by emptying the cartItems array
+    cartItems.length = 0;
+    // Update the cart display to show an empty cart
+    updateCartDisplay();
+  }
+</script>
+</body>
+</html>
+
